@@ -1,65 +1,78 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from "react";
+import BaseLayout from "../components/layouts/BaseLayout";
+import { Container, Row, Col } from "reactstrap";
+import Typed from "react-typed";
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const ROLES = [
+  "Developer",
+  "Tech Lover",
+  "Team Player",
+  "ReactJS",
+  "Student",
+  "Foodie",
+];
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+class Index extends React.Component {
+  render() {
+    return (
+      <BaseLayout className="cover">
+          <div className="main-section">
+            <div className="background-image">
+              <img src="/images/background-index.png" />
+            </div>
+            <Container>
+              <Row>
+                <Col md="6">
+                  <div className="hero-section">
+                    <div className={`flipper`}>
+                      <div className="back">
+                        <div className="hero-section-content">
+                          <h2> Frontend Web Developer </h2>
+                          <div className="hero-section-content-intro">
+                            Have a look at my portfolio and job history.
+                          </div>
+                        </div>
+                        <img className="image" src="/images/section-1.png" />
+                        <div className="shadow-custom">
+                          <div className="shadow-inner"> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Col>
+                <Col md="6" className="hero-welcome-wrapper">
+                  <div className="hero-welcome-text">
+                    <h1>
+                      Welcome to the portfolio website of Arhan Choudhury. Get
+                      informed, collaborate and discover projects I was working
+                      on through the years!
+                    </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+                    <Typed
+                      loop
+                      strings={ROLES}
+                      typeSpeed={100}
+                      backSpeed={70}
+                      backDelay={1000}
+                      loopCount={0}
+                      showCursor
+                      className="self-typed"
+                      cursorChar="|"
+                    ></Typed>
+                    <h1>
+                      "The more things seem to change the more they stay the
+                      same"
+                    </h1>
+                  </div>
+                  <div className="hero-welcome-bio">
+                    <h1>Let's take a look on my work.</h1>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+      </BaseLayout>
+    );
+  }
 }
+export default Index;
