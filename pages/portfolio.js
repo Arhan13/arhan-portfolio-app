@@ -1,23 +1,9 @@
-import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
 import axios from "axios";
 import BasePage from "../components/BasePage";
 
-class Portfolio extends React.Component {
-  static async getInitialProps({ query }) {
-    let post = {};
-    try {
-      const res = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts/${query.id}`
-      );
-      post = res.data;
-    } catch (e) {
-      console.error(e);
-    }
-    return { portfolio: post };
-  }
-  render() {
-    const { portfolio } = this.props;
+
+const Portfolio = ({portfolio}) => {
     return (
       <BaseLayout>
         <BasePage>
@@ -28,7 +14,20 @@ class Portfolio extends React.Component {
         </BasePage>
       </BaseLayout>
     );
-  }
 }
+
+Portfoio.getInitialProps = async ({ query }) => {
+  let post = {};
+  try {
+    const res = await axios.get(
+      `https://jsonplaceholder.typicode.com/posts/${query.id}`
+    );
+    post = res.data;
+  } catch (e) {
+    console.error(e);
+  }
+  return { portfolio: post };
+}
+
 
 export default Portfolio;
