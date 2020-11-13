@@ -1,6 +1,7 @@
-import BaseLayout from "../components/layouts/BaseLayout";
+
 import axios from "axios";
-import BasePage from "../components/BasePage";
+import BaseLayout from '../../components/layouts/BaseLayout';
+import BasePage from '../../components/BasePage';
 
 
 const Portfolio = ({portfolio}) => {
@@ -16,7 +17,7 @@ const Portfolio = ({portfolio}) => {
     );
 }
 
-Portfoio.getInitialProps = async ({ query }) => {
+Portfolio.getInitialProps = async ({ query }) => {
   let post = {};
   try {
     const res = await axios.get(

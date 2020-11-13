@@ -4,10 +4,11 @@ import Typed from "react-typed";
 
 const ROLES = [
   "Developer",
-  "Tech Lover",
-  "Team Player",
-  "ReactJS",
+  "ReactJs",
   "Student",
+  "Geek",
+  "Basketball",
+  "Investor",
   "Foodie",
 ];
 
