@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/shared/Header";
-import BaseLayout from "../components/layouts/BaseLayout";
-import BasePage from "../components/BasePage";
+import Header from "@/components/shared/Header";
+import BaseLayout from "@/components/layouts/BaseLayout";
+import BasePage from "@/components/BasePage";
 const About = () => {
     return (
       <BaseLayout>
