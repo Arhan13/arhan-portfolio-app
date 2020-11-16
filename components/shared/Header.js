@@ -3,7 +3,7 @@ import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap";
 
 import Link from "next/link";
 
-const BSNavLink = (props) => {
+const BsNavLink = (props) => {
   const { title, href } = props;
   return (
     <Link href={href}>
@@ -20,15 +20,19 @@ const BsNavBrand = () => {
   );
 };
 
-const LogoutLink = () => {
-  return <span className="nav-link port-navbar-link clickable">Logout</span>;
-};
+const LogoutLink = () => (
+  <a className="nav-link port-navbar-link" href="/api/v1/logout">
+    Logout
+  </a>
+);
 
-const LoginLink = () => {
-  return <span className="nav-link port-navbar-link clickable">Login</span>;
-};
+const LoginLink = () => (
+  <a className="nav-link port-navbar-link" href="/api/v1/login">
+    Login
+  </a>
+);
 
-const Header = () => {
+const Header = ({ user, loading }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   return (
@@ -44,28 +48,39 @@ const Header = () => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem className="port-navbar-item">
-              <BSNavLink href="/" title="Home" />
+              <BsNavLink href="/" title="Home" />
             </NavItem>
             <NavItem className="port-navbar-item">
-              <BSNavLink href="/about" title="About" />
+              <BsNavLink href="/about" title="About" />
             </NavItem>
             <NavItem className="port-navbar-item">
-              <BSNavLink href="/portfolios" title="Portfolios" />
+              <BsNavLink href="/portfolios" title="Portfolios" />
             </NavItem>
             <NavItem className="port-navbar-item">
-              <BSNavLink href="/blogs" title="Blogs" />
+              <BsNavLink href="/blogs" title="Blogs" />
             </NavItem>
             <NavItem className="port-navbar-item">
-              <BSNavLink href="/cv" title="Cv" />
+              <BsNavLink href="/cv" title="Cv" />
+            </NavItem>
+            <NavItem className="port-navbar-item">
+              <BsNavLink href="/secret" title="Secret" />
             </NavItem>
           </Nav>
           <Nav navbar>
-            <NavItem className="port-navbar-item">
-              <LoginLink />
-            </NavItem>
-            <NavItem className="port-navbar-item">
-              <LogoutLink />
-            </NavItem>
+            {!loading && (
+              <>
+                {user &&
+                  <NavItem className="port-navbar-item">
+                    <LogoutLink />
+                  </NavItem>
+                }
+                {!user &&
+                  <NavItem className="port-navbar-item">
+                    <LoginLink />
+                  </NavItem>
+                }
+              </>
+            )}
           </Nav>
         </Collapse>
       </Navbar>
