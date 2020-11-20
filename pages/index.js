@@ -16,7 +16,12 @@ const ROLES = [
 const Index = () => {
   const { data, loading } = useGetUser();
   return (
-    <BaseLayout className="cover" user={data} loading={loading}>
+    <BaseLayout
+      navClass="transparent"
+      className="cover"
+      user={data}
+      loading={loading}
+    >
       <div className="main-section">
         <div className="background-image">
           <img src="/images/background-index.png" />

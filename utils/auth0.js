@@ -13,6 +13,11 @@ const auth0 = initAuth0({
 });
 export default auth0;
 
+export const isAuthorized = (user, role) => {
+  //debugger;
+  return user && user[process.env.AUTH0_NAMESPACE + "/roles"].includes(role);
+};
+
 //Getting data from server
 export const authorizeUser = async (req, res) => {
   const session = await auth0.getSession(req);
@@ -27,11 +32,15 @@ export const authorizeUser = async (req, res) => {
   return session.user;
 };
 
-export const withAuth = (getData) => {
+export const withAuth = (getData) => (role) => {
   //Return a function with req and res
   return async ({ req, res }) => {
     const session = await auth0.getSession(req);
-    if (!session || !session.user) {
+    if (
+      !session ||
+      !session.user ||
+      (role && !isAuthorized(session.user, role))
+    ) {
       //No session or session user
       res.writeHead(302, {
         Location: "/api/v1/login",
@@ -40,7 +49,7 @@ export const withAuth = (getData) => {
       return { props: {} };
     }
     //Getdata is a callback function
-    const data = getData ? await getData() : {}
+    const data = getData ? await getData({ req, res }, session.user) : {};
     return { props: { user: session.user, ...data } };
   };
 };
