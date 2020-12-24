@@ -5,7 +5,7 @@ import BasePage from "@/components/BasePage";
 import { useGetUser } from "@/actions/user";
 const About = () => {
   const { data, loading } = useGetUser();
-  debugger
+  // debugger
   return (
     <BaseLayout user={data} loading={loading}>
       <BasePage>

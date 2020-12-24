@@ -5,7 +5,11 @@ import { useGetUser } from "@/actions/user";
 const Blogs = () => {
   const { data, loading } = useGetUser();
   return (
-    <BaseLayout user={data} loading={loading}>
+    <BaseLayout
+      user={data}
+      loading={loading}
+      className="cover"
+    >
       <BasePage>
         <h1>I am blogs page</h1>
       </BasePage>
