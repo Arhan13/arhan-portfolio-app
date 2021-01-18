@@ -12,9 +12,9 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "cross-env": "^7.0.2",
-    "dotenv-webpack": "^1.7.0",
     "express": "^4.17.1",
-    "next": "10.0.1",
+    "moment": "^2.29.1",
+    "next": "^10.0.1",
     "next-routes": "^1.4.2",
     "react": "^17.0.1",
     "react-datepicker": "^3.3.0",
@@ -24,6 +24,7 @@
     "react-typed": "^1.2.0",
     "reactstrap": "^8.7.1",
     "sass": "^1.29.0",
+    "slate-simple-editor": "git+https://github.com/Jerga99/slate-simple-editor.git",
     "swr": "^0.3.8"
   }
 }
