@@ -75,6 +75,8 @@
 }
 
 .hero-section {
+  height: 422px;
+  margin-bottom: 100px;
   h2 {
     color: white;
     font-weight: bold;
@@ -128,6 +130,7 @@
 
 .hero-welcome-wrapper {
   justify-content: flex-end;
+  margin-top: -50px;
 }
 
 @media (max-width: 991px) {
@@ -141,6 +144,13 @@
 
   .hero-welcome-text > h1 {
     margin-top: 0px;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-section {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
