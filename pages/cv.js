@@ -6,7 +6,7 @@ const Cv = () => {
   const { data, loading } = useGetUser();
   return (
     <BaseLayout user={data} loading={loading} >
-      <BasePage>
+      <BasePage title="Download my Resume- Arhan Choudhury">
         <Row>
           <Col md={{size : 8, offset : 2}}>
             <iframe style={{width : "100%", height :'800px'}} src="/Arhan_CV.pdf"></iframe>

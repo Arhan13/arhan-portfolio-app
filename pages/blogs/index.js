@@ -9,7 +9,7 @@ import BlogItem from 'components/BlogItem';
 
 const Blogs = ({ blogs }) => {
   const { data, loading } = useGetUser();
-  debugger;
+  //debugger;
   return (
     <BaseLayout
       navClass="transparent"
@@ -22,7 +22,7 @@ const Blogs = ({ blogs }) => {
         <span className="subheading">Programming, investing...</span>
       </Masthead>
 
-      <BasePage className="blog-body">
+      <BasePage className="blog-body" title="Fresh Blogs - Arhan Choudhury">
         <Row>
           {blogs.map((blog) => (
             <Col key={blog._id} md="10" lg="8" className="mx-auto">
@@ -37,9 +37,10 @@ const Blogs = ({ blogs }) => {
 };
 
 export async function getStaticProps() {
-  const json = await new BlogApi().getAll();
+  const {data} = await new BlogApi().getAll();
+  const blogs = data.map(item => ({...item.blog, author : item.author}))
   return {
-    props: { blogs: json.data },
+    props: { blogs },
     revalidate: 60,
   };
 }

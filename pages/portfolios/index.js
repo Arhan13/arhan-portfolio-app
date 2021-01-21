@@ -48,7 +48,7 @@ const Portfolios = ({ portfolios: initialPortfolios }) => {
       user={dataU}
       loading={loadingU}
     >
-      <BasePage header="Portfolios" className="portfolio-page">
+      <BasePage header="Portfolios" className="portfolio-page" title="My Experience - Arhan Choudhury">
         <Row>
           {/*Iterate over the columns */}
           {portfolios.map((portfolio) => (

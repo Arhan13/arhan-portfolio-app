@@ -11,7 +11,7 @@ const Portfolio = ({ portfolio }) => {
   const { data: dataU, loading: loadingU } = useGetUser();
   return (
     <BaseLayout user={dataU} loading={loadingU}>
-      <BasePage header="Portfolio Detail">{JSON.stringify(portfolio)}</BasePage>
+      <BasePage header="Portfolio Detail" title={`${portfolio.title} - Arhan Choudhury`}>{JSON.stringify(portfolio)}</BasePage>
     </BaseLayout>
   );
 };

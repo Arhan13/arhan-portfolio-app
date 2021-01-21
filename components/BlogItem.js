@@ -13,7 +13,7 @@ const BlogItem = ({ blog }) => {
         </Link>
         <p className="post-meta">
           Posted by
-          <a href=""> Arhan Choudhury </a> - {moment(blog.createdAt).format('LLL')}
+          <a href="#">  {blog.author.name}</a> - Posted On - {moment(blog.createdAt).format('LLL')}
         </p>
       </div>
     </div>
