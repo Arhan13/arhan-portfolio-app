@@ -14,7 +14,7 @@ const BlogDetail = ({ blog, author }) => {
   //  debugger
   return (
     <BaseLayout user={data} loading={loading}>
-      <BasePage className="slate-container" title={`${blog.title} - Arhan Choudhury`}>
+      <BasePage className="slate-container" title={`${blog.title} - Arhan Choudhury`} metaDescription={blog.subTitle}>
         <Row>
           <Col md={{ size: 6, offset: 3 }}>
             <Avatar

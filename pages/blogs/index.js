@@ -12,7 +12,7 @@ const Blogs = ({ blogs }) => {
   //debugger;
   return (
     <BaseLayout
-      navClass="transparent"
+      
       className="blog-listing-page"
       user={data}
       loading={loading}

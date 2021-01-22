@@ -1,16 +1,24 @@
-@import './shared/fonts';
 //Components
-@import './components/header';
+@import "./components/header";
 // Pages
-@import './index';
-@import './portfolios';
-@import './blogs';
-@import './about';
+@import "./index";
+@import "./portfolios";
+@import "./portfolio-detail";
+@import "./blogs";
+@import "./about";
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+* ::-webkit-scrollbar {
+  display: none;
+}
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
-  font-family: 'Montserrat', 'Helvetica' !important;
+  font-family: "Poppins", "Montserrat", "Helvetica" !important;
 }
 
 .clickable {
@@ -21,13 +29,25 @@ html, body {
   padding: 150px 0;
   padding-top: 150px;
   color: black;
-  background-color: #ecedee;
+  // background-color: #ecedee;
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   min-height: 100vh;
   .page-header-title {
     font-weight: bold;
     display: inline-block;
     margin-bottom: 20px;
-  } 
+  }
 }
 
 .absolute {
@@ -37,7 +57,7 @@ html, body {
 .self-typed {
   font-size: 31px;
   color: whitesmoke;
-  font-weight: bold;;
+  font-weight: bold;
   letter-spacing: 2px;
 }
 

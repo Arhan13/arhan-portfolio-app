@@ -47,6 +47,7 @@ const Portfolios = ({ portfolios: initialPortfolios }) => {
     <BaseLayout
       user={dataU}
       loading={loadingU}
+      navClass="transparent"
     >
       <BasePage header="Portfolios" className="portfolio-page" title="My Experience - Arhan Choudhury">
         <Row>
