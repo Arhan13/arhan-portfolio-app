@@ -1,7 +1,7 @@
 import { Container } from "reactstrap";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React from 'react';
+import React from "react";
 
 const PageHeader = ({ header }) => (
   <div className="page-header">
@@ -67,6 +67,8 @@ const BasePage = (props) => {
           }`}
         />
       </Head>
+
+     
       <div className={`${pageType} ${className}`}>
         <Wrapper>
           {header && <PageHeader header={header} />}

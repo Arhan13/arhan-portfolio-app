@@ -1,3 +1,5 @@
+
+
 .portfolio-page {
   min-height: 100vh;
   padding: 150px 0 0;
@@ -16,14 +18,14 @@
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
 
-    &:hover {
-      cursor: pointer;
-      transform: translateY(-5px);
-    }
+    // &:hover {
+    //   cursor: pointer;
+    //   transform: translateY(-5px);
+    // }
 
-    &:hover .readMore:before {
-      background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
-    }
+    // &:hover .readMore:before {
+    //   background: linear-gradient(to right, #ffffff 0%, #ffffff 100%);
+    // }
 
     &-header {
       padding: 3px;
@@ -38,7 +40,7 @@
       margin-top: -20px;
 
       font-size: 2em;
-      color: rgba(255,255,255,0.05);
+      color: rgba(255, 255, 255, 0.1);
       pointer-events: none;
     }
 

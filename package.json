@@ -16,16 +16,21 @@
     "moment": "^2.29.1",
     "next": "^10.0.1",
     "next-routes": "^1.4.2",
+    "particles-bg": "^2.5.0",
     "react": "^17.0.1",
+    "react-background-animation": "^1.0.1",
     "react-datepicker": "^3.3.0",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.11.3",
+    "react-parallax-tilt": "^1.4.70",
     "react-resize-detector": "^6.0.1-rc.5",
     "react-toastify": "^6.2.0",
     "react-typed": "^1.2.0",
+    "react-vanilla-tilt": "^1.0.0",
     "reactstrap": "^8.7.1",
     "sass": "^1.29.0",
     "slate-simple-editor": "git+https://github.com/Jerga99/slate-simple-editor.git",
-    "swr": "^0.3.8"
+    "swr": "^0.3.8",
+    "vanilla-tilt": "^1.7.0"
   }
 }
