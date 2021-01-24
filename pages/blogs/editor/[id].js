@@ -20,7 +20,7 @@ const BlogUpdateEditor = ({user, loading}) => {
   }
   // debugger
   return (
-    <BaseLayout user={user} loading={loading}>
+    <BaseLayout user={user} loading={loading} navClass="transparent">
       <BasePage>
         {data && data.content && (
           <Editor

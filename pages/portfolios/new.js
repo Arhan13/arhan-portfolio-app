@@ -14,7 +14,7 @@ const PortfolioNew = ({ user, loading: userLoading }) => {
   }
 
   return (
-    <BaseLayout user={user} loading={userLoading}>
+    <BaseLayout user={user} loading={userLoading} navClass="transparent">
       <BasePage header="Create Portfolio">
         <Row>
           <Col md="8">

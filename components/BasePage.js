@@ -23,6 +23,7 @@ const BasePage = (props) => {
   } = props;
   const pageType = indexPage ? "index-page" : "base-page";
   const Wrapper = noWrapper ? React.Fragment : Container;
+
   return (
     <>
       <Head>
@@ -69,7 +70,7 @@ const BasePage = (props) => {
       </Head>
 
      
-      <div className={`${pageType} ${className}`}>
+      <div className={`${pageType} ${className}`} >
         <Wrapper>
           {header && <PageHeader header={header} />}
           {children}

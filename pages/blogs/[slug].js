@@ -13,8 +13,28 @@ const BlogDetail = ({ blog, author }) => {
   const { data, loading } = useGetUser();
   //  debugger
   return (
-    <BaseLayout user={data} loading={loading}>
-      <BasePage className="slate-container" title={`${blog.title} - Arhan Choudhury`} metaDescription={blog.subTitle}>
+    <BaseLayout user={data} loading={loading} navClass="transparent">
+      <BasePage className="slate-container background3 cover cover-sunrise" title={`${blog.title} - Arhan Choudhury`} metaDescription={blog.subTitle}>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
+      <div className="hhh"></div>
         <Row>
           <Col md={{ size: 6, offset: 3 }}>
             <Avatar

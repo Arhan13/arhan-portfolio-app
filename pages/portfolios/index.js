@@ -20,7 +20,6 @@ import {
 import { useRouter } from "next/router";
 import PortfolioCard from "@/components/PortfolioCard";
 
-
 // import ParticlesBg from "particles-bg";
 
 const Portfolios = ({ portfolios: initialPortfolios }) => {
@@ -48,13 +47,21 @@ const Portfolios = ({ portfolios: initialPortfolios }) => {
   };
   return (
     <>
-    
       <BaseLayout user={dataU} loading={loadingU} navClass="transparent">
         <BasePage
           header="Portfolios"
-          className="portfolio-page"
+          className="portfolio-page background"
           title="My Experience - Arhan Choudhury"
         >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
           <Row>
             {/*Iterate over the columns */}
             {portfolios.map((portfolio) => (
@@ -106,7 +113,6 @@ const Portfolios = ({ portfolios: initialPortfolios }) => {
 //This function is called during the build time
 //Imporves performance of page
 //It will create static page with dynamic data
-
 
 export async function getStaticProps() {
   const json = await new PortfolioApi().getAll();

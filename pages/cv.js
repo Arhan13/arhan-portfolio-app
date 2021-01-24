@@ -6,7 +6,25 @@ const Cv = () => {
   const { data, loading } = useGetUser();
   return (
     <BaseLayout user={data} loading={loading} navClass="transparent">
-      <BasePage title="Download my Resume- Arhan Choudhury">
+      <BasePage className="background cover cover-red"title="Download my Resume- Arhan Choudhury">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      
+
         <Row>
           <Col md={{size : 8, offset : 2}}>
             <iframe style={{width : "100%", height :'800px'}} src="/Arhan_CV.pdf"></iframe>

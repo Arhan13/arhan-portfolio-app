@@ -74,7 +74,7 @@ const Dashboard = ({ user, loading }) => {
   return (
     <BaseLayout navClass="transparent" user={user} loading={loading}>
       {/* MASTHEAD */}
-      <Masthead imagePath="/images/home-bg.jpg">
+      <Masthead imagePath="/images/home-bg2.jpg">
         <h1>Blogs Dashboard</h1>
         <span className="subheading">
           Let's write some nice blog today{" "}

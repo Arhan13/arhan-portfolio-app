@@ -23,8 +23,8 @@ const BlogEditor = ({ user, loading }) => {
   }
 
   return (
-    <BaseLayout user={user} loading={loading}>
-      <BasePage>
+    <BaseLayout user={user} loading={loading} navClass="transparent">
+      <BasePage >
         <Editor onSave={saveBlog} loading={blogLoading} />
       </BasePage>
     </BaseLayout>

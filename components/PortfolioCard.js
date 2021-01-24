@@ -8,12 +8,12 @@ import {
   CardTitle,
 } from "reactstrap";
 
-import Tilt from "react-parallax-tilt";
+//import Tilt from "react-parallax-tilt";
 
 const PortfolioCard = ({ portfolio, children }) => {
   return (
     <>
-      <Tilt  perspective={800} glareEnable={true} glareMaxOpacity={0.7} >
+     
         <Card className="portfolio-card">
           <CardHeader className="portfolio-card-header">
             {portfolio.jobTitle}
@@ -29,7 +29,6 @@ const PortfolioCard = ({ portfolio, children }) => {
             {children}
           </CardBody>
         </Card>
-      </Tilt>
       
     </>
   );

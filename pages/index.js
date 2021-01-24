@@ -16,7 +16,7 @@ const ROLES = [
 
 const Index = () => {
   const { data, loading } = useGetUser();
-  const [isFlipping, setIsFlipping] = useState(false);
+  const [isFlipping, setIsFlipping] = useState(true);
   const flipInterval = useRef();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Index = () => {
   const startAnimation = () => {
     flipInterval.current = setInterval(() => {
       setIsFlipping((prevFlipping) => !prevFlipping);
-    }, 10000);
+    }, 5000);
   };
 
   return (
