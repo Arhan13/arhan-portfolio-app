@@ -16,7 +16,7 @@ const ROLES = [
 
 const Index = () => {
   const { data, loading } = useGetUser();
-  const [isFlipping, setIsFlipping] = useState(true);
+  const [isFlipping, setIsFlipping] = useState(false);
   const flipInterval = useRef();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Index = () => {
   const startAnimation = () => {
     flipInterval.current = setInterval(() => {
       setIsFlipping((prevFlipping) => !prevFlipping);
-    }, 5000);
+    }, 10000);
   };
 
   return (
@@ -64,7 +64,7 @@ const Index = () => {
                     <div className="back">
                       <div className="image image-2">
                         <div className="hero-section-content">
-                          <h2>Build with React and Next!!</h2>
+                          <h2>Build with React and NextJS</h2>
                           <div className="hero-section-content-intro">
                             Collaborate with me
                           </div>
@@ -80,9 +80,9 @@ const Index = () => {
               <Col md="6" className="hero-welcome-wrapper">
                 <div className="hero-welcome-text">
                   <h1>
-                    Welcome to the portfolio website of Arhan Choudhury. Get
-                    informed, collaborate and discover projects I was working on
-                    through the years!
+                    Welcome to my portfolio website, I'm Arhan Choudhury. Get
+                    informed, collaborate and discover projects I've worked on
+                    through my journey as a developer!
                   </h1>
 
                   <Typed

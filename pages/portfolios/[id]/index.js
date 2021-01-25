@@ -4,23 +4,32 @@ import BasePage from "@/components/BasePage";
 import { useRouter } from "next/router";
 import { useGetUser } from "@/actions/user";
 import PortfolioApi from "@/lib/api/portfolios";
-import { formatDate } from 'helpers/functions';
+import { formatDate } from "helpers/functions";
 
 const Portfolio = ({ portfolio }) => {
   const router = useRouter();
   //const { data: portfolio, error, loading } = useGetPostsById(router.query.id);
   const { data: dataU, loading: loadingU } = useGetUser();
   return (
-    <BaseLayout user={dataU} loading={loadingU} navClass="transparent">
+    <BaseLayout
+      user={dataU}
+      loading={loadingU}
+      navClass="transparent"
+      className="cover cover-black"
+    >
       <BasePage
         noWrapper
         indexPage
         title={`${portfolio.title} - Arhan Choudhury`}
         metaDescription={portfolio.description}
-        
+        className="cover cover-black"
       >
-        <div className="portfolio-detail">
-          <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <div className="portfolio-detail background5">
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <main role="main" class="inner page-cover">
               <h1 class="cover-heading">{portfolio.title}</h1>
               <p class="lead dates">

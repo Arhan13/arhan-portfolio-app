@@ -457,7 +457,7 @@ $amount: 100;
   animation-duration: $animationDuration;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  $colors: (#583c87, #e45a84, #f5f5f5);
+  $colors: ( #F56701,#DA8A67,#D3C6DF);
   @for $i from 1 through $amount {
     &:nth-child(#{$i}) {
       color: nth($colors, random(length($colors)));
