@@ -2,7 +2,7 @@ import PortfolioApi from "@/lib/api/portfolios";
 import auth0 from "@/utils/auth0";
 
 export default async function handlePortfolio(req, res) {
-  console.log(req.method);
+  //console.log(req.method);
   if (req.method === "GET") {
     const json = await new PortfolioApi().getById(req.query.id);
     return res.json(json.data);

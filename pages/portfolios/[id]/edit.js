@@ -33,7 +33,7 @@ const PortfolioEdit = ({ user }) => {
   };
 
   return (
-    <BaseLayout user={user} loading={false}>
+    <BaseLayout user={user} loading={false}  navClass="transparent">
       <BasePage header="Portfolio Edit">
         <Row>
           <Col md="8">
