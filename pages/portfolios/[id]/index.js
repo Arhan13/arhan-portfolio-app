@@ -8,8 +8,11 @@ import { formatDate } from "helpers/functions";
 
 const Portfolio = ({ portfolio }) => {
   const router = useRouter();
-  //const { data: portfolio, error, loading } = useGetPostsById(router.query.id);
   const { data: dataU, loading: loadingU } = useGetUser();
+
+  if (router.isFallback) {
+    return "Loading...";
+  }
   return (
     <BaseLayout
       user={dataU}
@@ -69,29 +72,51 @@ const Portfolio = ({ portfolio }) => {
 // }
 
 //This function is executed at build time
-export async function getStaticPaths() {
-  const json = await new PortfolioApi().getAll();
-  const portfolios = json.data;
+// export async function getStaticPaths() {
+//   const json = await new PortfolioApi().getAll();
+//   const portfolios = json.data;
 
-  //Get paths that we want to re-render based on portfolio id
-  const paths = portfolios.map((portfolio) => {
-    //We will return an array of objects with params of id.
-    return {
-      params: { id: portfolio._id },
-    };
-  });
+//   //Get paths that we want to re-render based on portfolio id
+//   const paths = portfolios.map((portfolio) => {
+//     //We will return an array of objects with params of id.
+//     return {
+//       params: { id: portfolio._id },
+//     };
+//   });
 
-  // fallback : false means that "not found pages" will be resolved into 404 page.
-  return { paths, fallback: false };
-}
+//   // fallback : false means that "not found pages" will be resolved into 404 page.
+//   return { paths, fallback: true };
+// }
 
-//The difference between the first one and this on is the params, we get all the params
-export async function getStaticProps({ params }) {
-  const json = await new PortfolioApi().getById(params.id);
-  const portfolio = json.data;
-  return { props: { portfolio } };
-}
+// //The difference between the first one and this on is the params, we get all the params
+// export async function getStaticProps({ params }) {
+//   const json = await new PortfolioApi().getById(params.id);
+//   const portfolio = json.data;
+//   return { props: { portfolio } };
+// }
 
 //[{params : {id : '  ....   '}},  {}, {}]
+
+
+
+export async function getStaticPaths() {
+  console.log('reexecuting getStaticPaths');
+  const json = await new PortfolioApi().getAll();
+  const portfolios = json.data;
+  const paths = portfolios.map(portfolio => {
+    return {
+      params: {id: portfolio._id}
+    }
+  })
+
+  return { paths, fallback: true };
+}
+
+export async function getStaticProps({params}) {
+  console.log('reexecuting getStaticProps');
+  const json = await new PortfolioApi().getById(params.id);
+  const portfolio = json.data;
+  return { props: {portfolio}, revalidate: 1};
+}
 
 export default Portfolio;
