@@ -28,7 +28,7 @@ const PortfolioEdit = ({ user }) => {
     //   )
     //   .catch(() => toast.error("Ooops...Some error!", { autoClose: 2000 }));
 
-    await updatePortfolio(router.query.id, data);
+    await updatePortfolio(router.query.id,data);
     toast.success("Portfolio has been updated!", { autoClose: 2000 });
   };
 
