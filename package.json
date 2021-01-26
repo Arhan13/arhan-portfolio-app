@@ -6,7 +6,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start-dev": "cross-env NODE_ENV=production node server.js",
-    "start" : "next start"
+    "start": "next start"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^0.11.0",
