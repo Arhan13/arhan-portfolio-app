@@ -61,7 +61,7 @@ export async function getStaticProps() {
   const blogs = data.map((item) => ({ ...item.blog, author: item.author }));
   return {
     props: { blogs },
-    revalidate: 60,
+    revalidate: 1,
   };
 }
 export default Blogs;
